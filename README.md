@@ -5,7 +5,7 @@ First Vue Project for DateTimeField
 
 ## Project setup
 ```
-npm install
+npm install && npm run build
 ```
 
 ### Compiles and hot-reloads for development
