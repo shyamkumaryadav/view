@@ -22,3 +22,7 @@ npm run build
 ```
 npm run lint
 ```
+
+```
+live at [https://todovuedjango.herokuapp.com/](https://todovuedjango.herokuapp.com/)
+```
