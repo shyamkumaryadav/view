@@ -1,36 +1,15 @@
 <template>
   <div id="app">
-    <Todos v-bind:itmes="todos" />
+    <Todos />
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos.vue"
+import Todos from "./components/Todos"
 export default {
   name: 'App',
   components: {
     Todos
-  },
-  data(){
-    return {
-      todos: [
-        {
-          id:1,
-          name: "shyam",
-          is_done: true
-        },
-        {
-          id:2,
-          name: "shyam kumar yadav",
-          is_done: false
-        },
-        {
-          id:2,
-          name: "asasasasasas",
-          is_done: true
-        }
-      ]
-    }
   }
 }
 </script>
