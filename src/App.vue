@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <Todos />
+    <h1>Hello font size 12px</h1>
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos"
+import Todos from "./components/Todos";
+
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Todos
-  }
-}
+    Todos,
+  },
+};
 </script>
 
 <style>
-*{
+* {
   padding: 0px;
   margin: 0px;
 }
@@ -23,8 +25,13 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
   color: #2c3e50;
-  /*margin-top: 60px;*/
+}
+</style>
+
+<style scoped>
+h1 {
+  font-size: 12px;
+  fill-opacity: 0;
 }
 </style>
