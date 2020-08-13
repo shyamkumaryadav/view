@@ -1,17 +1,25 @@
 <template>
   <div>
-    <span v-bind:title="message">
-      Hover your mouse over me for a few seconds
-      to see my dynamically bound title!
-    </span>
+    <h1>
+      {{message}}
+      <span>{{ time }}</span>
+    </h1>
   </div>
 </template>
 
 <script>
 export default {
   name: "Todos",
-  data: {
-    message: "You loaded this page on " + new Date().toLocaleString(),
+  data() {
+    return {
+      message: "You loaded this page on ",
+      time: null,
+    };
+  },
+  created() {
+    setInterval(() => {
+      this.time = new Date().toLocaleTimeString();
+    }, 1000);
   },
 };
 </script>
