@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <v-rating
+      background-color="grey"
+      color="blue"
+      empty-icon="$mdiHeartOutline"
+      full-icon="$mdiHeart"
+      half-icon="$mdiHeartHalfFull"
+      half-increments
+      length="5"
+      size="45"
+      value="15"
+    ></v-rating>
   </div>
 </template>

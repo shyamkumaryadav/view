@@ -1,5 +1,5 @@
 <template>
-  <v-card dark flat>
+  <v-card flat root>
     <v-toolbar flat height="72">
       <v-switch
         v-model="$vuetify.theme.dark"
@@ -21,26 +21,26 @@
 
       <v-divider class="mb-y"></v-divider>
 
-      <v-theme-provider root>
-        <v-list rounded="b">
-          <v-subheader>
-            <span>I inherit from the root</span>
+      <!-- <v-theme-provider root> -->
+      <v-list rounded="b">
+        <v-subheader>
+          <span>I inherit from the root </span>
 
-            <strong>&nbsp;$vuetify.theme.dark</strong>
-          </v-subheader>
+          <strong>&nbsp; $vuetify.theme.dark</strong>
+        </v-subheader>
 
-          <v-list-item v-for="item in items" :key="item">
-            <v-list-item-title v-text="item"></v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-theme-provider>
+        <v-list-item v-for="item in items" :key="item">
+          <v-list-item-title v-text="item"></v-list-item-title>
+        </v-list-item>
+      </v-list>
+      <!-- </v-theme-provider> -->
     </v-card-text>
   </v-card>
 </template>
 
 <script>
 // @ is an alias to /src
-
+// import HelloWorld from "../components/HelloWorld";
 export default {
   name: "Home",
   props: {
