@@ -12,18 +12,24 @@
         <router-link to="/about">About</router-link>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-switch v-model="$vuetify.theme.dark" inset persistent-hint></v-switch>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        hint="This toggles the global state of the Vuetify theme"
+        label="Dark"
+      ></v-switch>
     </v-app-bar>
 
     <!-- nav bar -->
     <v-navigation-drawer v-model="drawer" absolute bottom temporary>
       <v-list-item>
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          <v-img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.qmEhwqCHPZbjMChIN0lAswAAAA%26pid%3DApi&f=1"
+          ></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>Shyamkumar yadav</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
