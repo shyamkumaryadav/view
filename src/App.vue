@@ -107,7 +107,16 @@ export default {
       { title: "Home", icon: "mdi-view-dashboard" },
       { title: "About", icon: "mdi-forum" },
     ],
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    icons: [
+      "mdi-facebook",
+      "mdi-twitter",
+      "mdi-linkedin",
+      "mdi-instagram",
+      "mdi-reddit",
+      "mdi-youtube",
+      "mdi-whatsapp",
+      "mdi-web",
+    ],
   }),
 
   watch: {
