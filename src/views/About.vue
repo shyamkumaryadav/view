@@ -1,17 +1,18 @@
 <template>
   <div class="about">
     <v-card class="green"
-      ><span class="grey--text text--lighten-2 caption mr-2">
-        ({{ rating }})
-      </span>
+      ><v-chip
+  close-icon="mdi-close-outline"
+  color="orange"
+>{{ rating }}</v-chip>
       <v-rating
         v-model="rating"
         background-color="white"
-        color="yellow accent-4"
+        color="red accent-4"
         dense
         half-increments
         hover
-        size="18"
+        size="60"
       ></v-rating>
     </v-card>
   </div>
