@@ -41,6 +41,16 @@
     <v-main>
       <router-view></router-view>
     </v-main>
+   <v-btn
+  class="md-5 mr-3 elevation-21 btnTop "
+  :class="isScroll ? 'showTop' : 'hideTop'"
+  dark
+  fab
+  button
+  right
+  color="indigo darken-3"
+  @click="top"
+><v-icon dark>mdi-arrow-up</v-icon></v-btn>
   </v-app>
 </template>
 
@@ -52,6 +62,7 @@ export default {
   data: () => ({
     drawerToggle: false,
     group: null,
+    isScroll: false,
     items: [
       { title: "Home", icon: "mdi-view-dashboard", route: "/" },
       { title: "About", icon: "mdi-forum", route:"/about" },
@@ -76,11 +87,50 @@ export default {
       this.drawer = false;
     },
   },
+  methods: {
+    top(){
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    },
+    Scr(){
+      let y = window.scrollY
+      if (y > 1000) {
+        this.isScroll = true
+      } else {
+        this.isScroll = false
+      }
+    }
+      
+  },
   created: function () {
+    window.addEventListener('scroll', this.Scr)
     console.log(this.$vuetify.theme.dark);
   },
   updated: function () {
     console.log("update: ", this.$vuetify.theme.dark);
   },
+  destroyed(){
+    window.addEventListener('scroll', this.Scr)
+  },
 };
 </script>
+
+<style scoped>
+.btnTop{
+  position: fixed ;
+  bottom: 12px;
+  right: 15px;
+  
+}
+.hideTop{
+  visibility: hidden;
+  opacity: 0;
+}
+.showTop{
+  visibility: visible;
+  opacity: 1;
+}
+</style>
