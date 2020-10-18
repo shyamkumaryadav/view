@@ -3,9 +3,11 @@
     <v-toolbar flat height="72"> </v-toolbar>
     <v-container>
       <v-row>
-        <v-col class="red"> This is col 1. </v-col>
-        <v-col class="white black--text"> This is col 2. </v-col>
-        <v-col class="blue"> This is col 3. </v-col>
+        <v-col><v-card outlined v-for="post in posts" :key="post.userId" class="my-lg-4 my-xs-4 my-sm-4">
+          <v-card-title class="text-capitalize">{{ post.title }}</v-card-title>
+          <v-card-text class="text-capitalize">{{ post.body }}</v-card-text>
+          <v-card-actions><v-btn>Text {{ post.id }}</v-btn></v-card-actions>
+        </v-card></v-col>
       </v-row>
     </v-container>
   </v-card>
@@ -22,7 +24,15 @@ export default {
       default: () => ({}),
     },
   },
-
-  data: () => ({ items: ["One", "Two", "Three"] }),
+  created: function(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json)
+        this.posts = json
+      } )
+    console.log(this.posts)
+  },
+  data: () => ({ items: ["One", "Two", "Three"], posts: {} }),
 };
 </script>

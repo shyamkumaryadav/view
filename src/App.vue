@@ -10,27 +10,37 @@
             Online Users UserName
           </v-list-item-content>
         </v-list-item>
+              <v-divider></v-divider>
+<v-list-item v-for="item in items" v-bind:key="item.route" link :to="item.route">
+  <v-list-item-action >
+    <v-icon>{{ item.icon }}</v-icon>
+  </v-list-item-action>
+  <v-list-item-content>
+    <v-list-item-title>{{ item.title }}</v-list-item-title>
+  </v-list-item-content>
+</v-list-item>
       </v-list>
-      <v-list >
-        
-      </v-list>
+<template v-slot:append>
+        <div class="pa-2 fill-height">
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        inset
+        label="Dark Theme"
+        persistent-hint
+      ></v-switch>
+        </div>
+      </template>
     </v-navigation-drawer>
     <v-app-bar app dense flat class="light-blue darken-1">
       <v-app-bar-nav-icon @click.native.stop="drawerToggle = !drawerToggle"></v-app-bar-nav-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">Vuetify Chat</router-link>
+        <router-link to="/" tag="span" style="cursor: pointer">Post</router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items v-for="item in items" v-bind:key="item.route">
-        <v-btn text :key="item.title" :to="item.route">
-          <v-icon left>{{ item.icon }}</v-icon>
-          <div class="hidden-xs-only">{{ item.title }}</div>
-        </v-btn>
-      </v-toolbar-items>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -45,6 +55,9 @@ export default {
     items: [
       { title: "Home", icon: "mdi-view-dashboard", route: "/" },
       { title: "About", icon: "mdi-forum", route:"/about" },
+      {title:"logout", icon: "error", route: "/logout"},
+      {title: "Sign Form", icon: "mdi-contain", route: "/sign"},
+      {title: "404", icon: "mdi-credit-card-scan-outline", route: "/asasasasas"}
     ],
     icons: [
       "mdi-facebook",
