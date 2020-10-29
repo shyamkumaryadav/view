@@ -1,32 +1,30 @@
 <template>
-  <v-app class="app-wrapper" dark>
-    <app-nav></app-nav>
-  </v-app>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
 </template>
 
-<script>
-import AppNav from "./views/layouts/AppNav"
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default {
+#nav {
+  padding: 30px;
+}
 
-  name: 'AppLayout',
-  components: {
-    AppNav,
-  },
-  data() {
-    return {};
-  },
-  methods: {
-    toggleSidebar() {
-      if (this.$refs.sidebar) {
-        this.$refs.sidebar.toggleSidebar();
-      }
-    },
-    toggleTemporary(val) {
-      if (this.$refs.sidebar) {
-        this.$refs.sidebar.toggleTemporary(val);
-      }
-    },
-  },
-};
-</script>
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
